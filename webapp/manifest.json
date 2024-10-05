@@ -14,6 +14,19 @@
       "id": "@sap/generator-fiori:basic",
       "version": "1.15.0",
       "toolsId": "7481fb48-5026-4cbe-bb0a-4943c941c02b"
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "helloworld-display": {
+          "semanticObject": "semanticobjecthelloworld",
+          "action": "display",
+          "title": "{{flpTitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
     }
   },
   "sap.ui": {

@@ -4,7 +4,7 @@
     <Page id="page" title="HelloWorld">
         <content>
             <FlexBox direction="Row" alignItems="Center" class="sapUiTinyMarginBottom" id="flexbox">
-                <Text text="Write smthing" class="sapUiTinyMarginEnd" id="text"></Text>
+                <Text text="Write smthing123" class="sapUiTinyMarginEnd" id="text"></Text>
                 <Button xmlns="sap.m" text="Click" id="btn" press=".onPress"></Button>
             </FlexBox>
         </content>
