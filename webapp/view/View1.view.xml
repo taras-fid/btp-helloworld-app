@@ -1,11 +1,52 @@
 <mvc:View controllerName="sap.btp.helloworldui5.controller.View1"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
-    <Page id="page" title="HelloWorld">
+    
+    <Page id="page" title="Enhanced HelloWorld App with Picture and Business Logic">
         <content>
+            <Image src="https://www.sap.com/dam/application/shared/logos/sap-logo-svg.svg" 
+                   alt="SAP Logo" width="200px" class="sapUiTinyMarginBottom sapUiTinyMarginTop"/>
+            
             <FlexBox direction="Row" alignItems="Center" class="sapUiTinyMarginBottom" id="flexbox">
-                <Text text="Write smthing123" class="sapUiTinyMarginEnd" id="text"></Text>
-                <Button xmlns="sap.m" text="Click" id="btn" press=".onPress"></Button>
+                <Text text="Enter Something:" class="sapUiTinyMarginEnd"></Text>
+                <Input id="inputField" placeholder="Write something here" liveChange=".onLiveChange"></Input>
+                <Button text="Submit" id="btnSubmit" press=".onPress" class="sapUiTinyMarginStart"></Button>
+            </FlexBox>
+
+            <HBox class="sapUiTinyMarginBottom">
+                <Text text="Filter Table by Name:" />
+                <Input id="filterField" placeholder="Type to filter..." liveChange=".onFilterTable" class="sapUiTinyMarginStart sapUiTinyMarginEnd"/>
+            </HBox>
+
+            <Table id="dataTable" items="{path: '/items'}" class="sapUiTinyMarginTop">
+                <headerToolbar>
+                    <Toolbar>
+                        <Title text="Data Table"></Title>
+                        <ToolbarSpacer/>
+                        <Button text="Calculate Total" press=".onCalculateTotal"/>
+                    </Toolbar>
+                </headerToolbar>
+                <columns>
+                    <Column>
+                        <Text text="Name" />
+                    </Column>
+                    <Column>
+                        <Text text="Value" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{name}" />
+                            <Text text="{value}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+
+            <FlexBox id="totalDisplay" class="sapUiTinyMarginTop">
+                <Text text="Total Value: " />
+                <Text id="totalText" text="{/total}" class="sapUiTinyMarginStart sapUiTinyMarginBottom"/>
             </FlexBox>
         </content>
     </Page>
